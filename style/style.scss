@@ -1,0 +1,284 @@
+@use 'mixins'  as *;
+@use 'reset' as *;
+@use 'fonts' as *;
+header {
+    margin: 0 auto;
+    width: 1600px; 
+    height: 748px;
+    background-image: url(../img/main/Бэкграунд.jpg); 
+     
+} 
+.head {
+    width: 1205px;
+     height: 65px; 
+    padding-top: 16px;
+    margin-left: 198px;
+    
+    &__navigate { 
+        display: flex;
+        align-items: center;
+         
+         
+         
+
+         &__section {
+            font-family: $fontmon;
+            color: $primary-color;
+            font-size: 16px;
+            font-weight: 400; 
+            line-height: 17.6px;
+            margin-left: 39px;
+
+            &:hover {
+                transform: scale(1.1);
+            };
+
+            &--first {
+                margin-left: 473px;
+                font-weight: 500;
+            }
+         }
+
+         &__button {
+            color: $primary-color;
+            margin-left: 73px; 
+            width: 112px;
+            height: 34px;
+            @include center;
+            border: 1px $second-color solid;
+            border-radius: 4px;
+            font-family: $fontmon;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 17.6px;
+
+            &:hover {
+                box-shadow: 0px 5px 50px $second-color;
+            }
+         }
+    } 
+
+}
+.header__main {
+    display: flex;
+    &__titles {
+
+        &__first {
+            margin: 100px 0px 0px  200px;
+            color: $primary-color;
+            font-family: $fontplay; 
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 53px;
+            width: 442px;
+            height: 159px;
+        }
+
+        &__scrool {
+            display: flex;
+
+
+            &__line {
+                margin: 87px 0px 0px 200px;
+                width: 81px;
+                height: 1px;
+                background-color: $primary-color;
+                
+            } 
+            &__text {
+                margin: 79px 0 0 18px;
+                font-family: $fontmon;
+                color: $primary-color;
+                font-size: 16px;
+                font-weight: 600;
+            }
+
+            &__para {
+                width: 240px;
+                height: 84px;
+                margin: 77px 0 0 43px;
+                font-family: $fontmonthin;
+                color: $primary-color;
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 21px;
+                 
+            }
+        }
+
+    &__button {
+        @include button;
+        width: 240px;
+        height: 48px;
+        margin: 33px 0 0 392px;
+    }
+    } 
+
+
+    &__comp {
+
+        &--active {
+            margin: 80px 0 0 115px;
+            
+        } 
+
+        
+      
+    }
+
+
+    &__verification {
+        width: 539px;
+        height: 351px;
+        position: absolute; 
+        display: flex; 
+        flex-direction: column;
+        margin: 100px 503px 0 503px; 
+        background-color: $primary-color;
+        border-radius: 6px;
+        
+
+    &__title {
+        display: flex;
+
+        &__name {
+            margin: 34px 0 0 37px; 
+            font-family: $fontmon;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 20px
+
+        } 
+
+        &__exit {
+            width: 18px;
+            height: 18px;
+            margin:  28px 0 0 293px;
+            
+
+            
+
+            &::before {
+                content: "";
+                width: 2px;
+                height: 18px;
+                background-color: black;
+                position: absolute;
+                transform: rotate(45deg);
+
+            }
+
+            &::after {
+                content: "";
+                width: 2px;
+                height: 18px;
+                background-color: black;
+                position: absolute;
+                transform: rotate(-45deg);
+
+
+            }
+        }
+    }
+         
+
+        &__input {
+            display: flex;
+            flex-direction: column; 
+            
+
+            &--one {
+                
+            }
+
+
+
+        }
+        
+    }
+}
+.header__main__comp__buttons {
+    display: flex;
+    margin: 37px 0 0 200px;
+    gap: 10px;
+    &--perv {
+        @include button;
+        width: 36px;
+        height: 36px;
+    }
+
+    &--next {
+        @include button;
+        width: 36px;
+        height: 36px;
+    } 
+
+
+    &__lines {
+        display: flex; 
+        font-family: $fontplay;
+        margin-left: 132px;
+
+
+
+        &--active {
+            @include center;
+            border-bottom: 1px $primary-color solid;
+            width: 330px;
+            transition: all 0.5s linear;
+
+            color: $primary-color ;
+
+            &::after  {
+                content: "" ;
+                position: relative;
+                width: 1px;
+                background-color: $primary-color ;
+                height: 9px; 
+                left: 158px;
+                top: 14px
+                
+            } 
+
+            &::before {
+                content: "" ;
+                position: relative;
+                width: 1px;
+                background-color: $primary-color ;
+                height: 9px; 
+                right: 158px;
+                top: 14px
+            }
+        } 
+
+        &--deactive {
+            @include center; 
+            border-bottom: 1px $primary-color solid; 
+            width: 330px;        
+            color: $primary-color;
+            opacity: 0.2;  
+            transition: all 0.5s linear;
+
+            &::after {
+                content: "" ;
+                position: relative;
+                width: 1px;
+                background-color: $primary-color ;
+                height: 9px; 
+                left: 158px;
+                top: 14px
+            }
+            
+
+            &::before {
+                content: "" ;
+                position: relative;
+                width: 1px;
+                background-color: $primary-color ;
+                height: 9px; 
+                right: 158px;
+                top: 14px
+            }
+        } 
+    }
+}
