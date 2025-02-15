@@ -65,6 +65,10 @@ ul, li {
   all: unset;
 }
 
+input {
+  all: unset;
+}
+
 @font-face {
   font-family: "play";
   src: url(/font/Play/Play-Regular.ttf) format("tff");
@@ -204,19 +208,26 @@ header {
   margin: 100px 503px 0 503px;
   background-color: #FFFFFF;
   border-radius: 6px;
+  box-shadow: 0px 10px 100px 30px;
+}
+.header__main__verification--active {
+  display: flex;
+}
+.header__main__verification--unactive {
+  display: none;
 }
 .header__main__verification__title {
   display: flex;
 }
 .header__main__verification__title__name {
-  margin: 34px 0 0 37px;
+  margin: 34px 0 0 49px;
   font-family: "montsserrat", sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 20px;
 }
 .header__main__verification__title__exit {
-  width: 18px;
+  width: 30px;
   height: 18px;
   margin: 28px 0 0 293px;
 }
@@ -240,6 +251,66 @@ header {
   display: flex;
   flex-direction: column;
 }
+.header__main__verification__input__main--one, .header__main__verification__input__main--two {
+  width: 471px;
+  height: 55px;
+  border: 1px solid gray;
+  border-radius: 6px;
+  margin: 26px 0 0 33px;
+  display: flex;
+  align-items: center;
+}
+.header__main__verification__input__main--one--input {
+  margin-left: 18px;
+}
+.header__main__verification__input__main--two {
+  margin-top: 12px;
+}
+.header__main__verification__input__main--two--input {
+  margin-left: 18px;
+}
+.header__main__verification__input__main--two--visibality {
+  margin-left: 220px;
+}
+.header__main__verification__input--button {
+  background-color: #386DF4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: #386DF4 1px solid;
+  border-radius: 4px;
+  color: #FFFFFF;
+  font-size: 18px;
+  line-height: 20px;
+  font-weight: 700;
+  font-family: "montsserrat", sans-serif;
+  width: 471px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 25px 0 0 33px;
+}
+.header__main__verification__input--button:hover {
+  box-shadow: 0px 5px 20px #386DF4;
+}
+.header__main__verification__input--forgot {
+  color: #8A8A8F;
+  margin: 12px 0 0 394px;
+}
+
+.visibility-active::before {
+  content: "";
+  width: 1px;
+  height: 18px;
+  border-radius: 10px;
+  background-color: #384E85;
+  position: absolute;
+  transform: rotate(40deg);
+  right: 62px;
+  top: 166px;
+}
+
 .header__main__comp__buttons {
   display: flex;
   margin: 37px 0 0 200px;
@@ -301,7 +372,7 @@ header {
   width: 1px;
   background-color: #FFFFFF;
   height: 9px;
-  left: 158px;
+  left: 155px;
   top: 14px;
 }
 .header__main__comp__buttons__lines--active::before {
@@ -310,7 +381,7 @@ header {
   width: 1px;
   background-color: #FFFFFF;
   height: 9px;
-  right: 158px;
+  right: 155px;
   top: 14px;
 }
 .header__main__comp__buttons__lines--deactive {
@@ -329,7 +400,7 @@ header {
   width: 1px;
   background-color: #FFFFFF;
   height: 9px;
-  left: 158px;
+  left: 155px;
   top: 14px;
 }
 .header__main__comp__buttons__lines--deactive::before {
@@ -338,6 +409,6 @@ header {
   width: 1px;
   background-color: #FFFFFF;
   height: 9px;
-  right: 158px;
+  right: 155px;
   top: 14px;
 }/*# sourceMappingURL=style.css.map */

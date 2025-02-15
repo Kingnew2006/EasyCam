@@ -20,16 +20,23 @@
             </ul>
         </div>
 
-        <div class="header__main__verification">
+        <div class="header__main__verification header__main__verification--unactive">
             <div class="header__main__verification__title">
                 <div class="header__main__verification__title__name">Войти в аккаунт</div>
-                <button class="header__main__verification__title__exit"></button>
+                <button type="button" class="header__main__verification__title__exit"></button>
             </div>
             <form class="header__main__verification__input">
-                <input class="header__main__verification__input--one" placeholder="Имя пользователя" type="text">
-                <input class="header__main__verification__input--two" placeholder="Пароль" type="password">
-                <button type="submit" class="header__main__verification__input--button"></button> 
-                <div class="header__main__verification__input--forgot"></div>
+                <div class="header__main__verification__input__main--one">
+                    <input class="header__main__verification__input__main--one--input" placeholder="Имя пользователя" type="text">
+                </div>    
+                <div class="header__main__verification__input__main--two">
+                    <input class="header__main__verification__input__main--two--input" placeholder="Пароль" type="password">
+                    <button class="header__main__verification__input__main--two--visibality visibility-active" type="button"><img src="./img/main/visibility 1.svg" alt=""></button>
+                </div>    
+
+                <button type="button" class="header__main__verification__input--button">Войти</button> 
+                <div class="header__main__verification__input--forgot">Забыли пароли?</div>
+
             </form>
         </div>
 
