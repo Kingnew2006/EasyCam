@@ -130,13 +130,14 @@ header {
     &__verification {
         width: 539px;
         height: 351px;
-        position: absolute; 
+        position: fixed; 
         display: flex; 
         flex-direction: column;
         margin: 100px 503px 0 503px; 
         background-color: $primary-color;
         border-radius: 6px;
         box-shadow: 0px 10px 100px 30px;
+        z-index: 1000;
 
         &--active {
             display: flex;
