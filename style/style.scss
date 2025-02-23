@@ -216,9 +216,11 @@ header {
             &__main--two {
                 @extend .header__main__verification__input__main--one;
                 margin-top: 12px;
+                
 
                 &--input {
                     margin-left: 18px;
+                    width: 193px;
                 }
 
                 &--visibality {
@@ -345,5 +347,146 @@ header {
                 top: 14px
             }
         } 
+    }
+}
+
+
+.main__service {
+    width: 1600px;
+    height: 935px;
+    background-color: $primary-color;
+    margin: 0 auto;
+
+    &__chapter__title {
+        margin: 120px 0 0 200px;
+        font-size: 48px;
+        font-weight: 700;
+        color: $black;
+        line-height: 53px;
+        width: 442px;
+        height: 106px;
+    }
+
+    &__chapter__paragraph {
+        margin: 40px 0 0 660px;
+        color: $black;
+        font-size: 18px;
+        font-weight: 500;
+        font-family: $fontmon;
+        width: 646px;
+        height: 75px;
+        opacity: 0.7;
+
+        &::before { 
+            content: "";
+            width: 1px;
+            height: 62px;
+            display: inline-block;
+            background-color: $second-color; 
+            position: absolute;
+            right: 1200px;
+            
+            
+
+
+        }
+    }
+
+
+    &__chapter__main {
+        display: flex;
+        gap: 44px;
+        margin: 40px 0 0 201px;
+    }
+
+    &__chapter__firstTwo__main { 
+        display: flex;
+        gap: 44px;
+    }
+
+
+    &__chapter__card {
+        width: 370px;
+        height: 434px;
+        box-shadow: #8A8A8F 0px 5px 10px 2px;
+        border-radius: 10px;
+
+
+        &__img {
+            width: 164px;
+            height: 164px;
+            margin: 50px 0 0 103px;
+        } 
+
+        &__title {
+            margin: 30px 0 0 45px;
+            font-size: 20px;
+            font-weight: 700;
+            color: $black;
+            line-height: 24px;
+            font-family: $fontmon;
+        }
+
+        &__paragraph {
+            margin: 20px 0 0 45px;
+            font-size: 16px;
+            font-weight: 500;
+            color: $black;
+            line-height: 24px;
+            font-family: $fontmon;
+            opacity: 0.7;
+        }
+    }
+
+
+
+
+    &__app {
+        width: 1600px;
+        height: 553px;
+        margin:  0 auto;
+
+        
+        background: url(../img/main__service__chapter/Create\ Your\ Profile\ 1.png);
+        background-position: right 0px bottom 0px;
+        background-repeat: no-repeat; 
+
+        &__title {
+            margin: 70px 0 0 200px;
+            font-size: 48px;
+            font-weight: 700;
+            color: $black;
+            line-height: 52px;
+            width: 687px;
+            height: 106px;
+        } 
+
+        &__plus {
+            width: 646px;
+            height: 100px;
+            margin: 50px 0 0 225px;
+            color: $black;
+            opacity: 0.7;
+        } 
+
+        &__link {
+            margin: 41px 0 0 200px;
+        }
+    }
+}
+
+.main__sevice__app__pluses {
+    
+
+    &::before {
+        content: "";
+        width: 12px;
+        height: 15px;
+        background: url(../img/main__service__chapter/arrow.svg);
+        background-repeat: no-repeat;
+        display: inline-block;
+        position: relative;
+        top: 3px;
+        right: 4px ;
     }
 }
