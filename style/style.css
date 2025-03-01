@@ -28,6 +28,11 @@ html, body {
   margin: 0 auto;
 }
 
+sup {
+  vertical-align: super;
+  font-size: smaller;
+}
+
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
@@ -524,4 +529,89 @@ header {
   position: relative;
   top: 3px;
   right: 4px;
+}
+
+.main__rate {
+  margin: 0 auto;
+  width: 1600px;
+  height: 733px;
+  background: url(../img/main__rate__section/Бэк\ граунд.jpg);
+}
+.main__rate__title {
+  margin: 0px 0 0 200px;
+  padding-top: 120px;
+  font-size: 48px;
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 53px;
+  width: 442px;
+  height: 53px;
+}
+.main__rate__card__main {
+  display: flex;
+  gap: 21px;
+  margin: 50px 0 0 200px;
+}
+.main__rate__card__firsttwo {
+  display: flex;
+  gap: 21px;
+}
+.main__rate__card {
+  width: 370px;
+  height: 390px;
+  border: 1px solid #FFFFFF;
+  border-radius: 10px;
+  opacity: 0.7;
+}
+.main__rate__card__title {
+  margin: 50px 0 0 45px;
+  font-size: 26px;
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 31px;
+  font-family: "play", sans-serif;
+}
+.main__rate__card__price {
+  font-family: "play", sans-serif;
+  height: 59px;
+  color: #FFFFFF;
+  font-size: 48px;
+  font-weight: 700;
+  margin: 30px 0 0 45px;
+  line-height: 58px;
+}
+.main__rate__card__paragraph {
+  margin: 22px 0 0 45px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #FFFFFF;
+  line-height: 24px;
+  font-family: "montsserrat", sans-serif;
+  opacity: 0.6;
+  width: 350px;
+  height: 72px;
+}
+.main__rate__card__button {
+  background-color: #386DF4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: #386DF4 1px solid;
+  border-radius: 4px;
+  color: #FFFFFF;
+  font-size: 18px;
+  line-height: 20px;
+  font-weight: 700;
+  font-family: "montsserrat", sans-serif;
+  width: 280px;
+  height: 48px;
+  margin: 20px 0 0 45px;
+  background-color: transparent;
+}
+.main__rate__card__button:hover {
+  box-shadow: 0px 5px 20px #386DF4;
+}
+.main__rate__card:hover {
+  opacity: 1;
+  width: 418px;
 }/*# sourceMappingURL=style.css.map */

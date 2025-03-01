@@ -491,3 +491,97 @@ header {
         right: 4px ;
     }
 }
+
+
+
+.main__rate {
+    margin: 0 auto;
+    width: 1600px;
+    height: 733px;
+    background: url(../img/main__rate__section/Бэк\ граунд.jpg);
+
+
+    &__title {
+        margin: 0px 0 0 200px;
+        padding-top: 120px;
+        font-size: 48px;
+        font-weight: 700;
+        color: $primary-color;
+        line-height: 53px;
+        width: 442px;
+        height: 53px;
+
+    } 
+
+    &__card__main {
+        display: flex;
+        gap: 21px;
+        margin: 50px 0 0 200px;
+    }
+
+
+    &__card__firsttwo {
+        display: flex;
+        gap: 21px;
+    }
+
+    &__card {
+        width: 370px;
+        height: 390px;
+        border: 1px solid $primary-color;
+        border-radius: 10px;
+        opacity: 0.7;
+
+
+        &__title {
+            margin: 50px 0 0 45px;
+            font-size: 26px;
+            font-weight: 700;
+            color: $primary-color;
+            line-height: 31px;
+            font-family: $fontplay;
+        }
+
+        &__price {
+            font-family: $fontplay;
+            height: 59px;
+            color: $primary-color;
+            font-size: 48px;
+            font-weight: 700;       
+            margin: 30px 0 0 45px;
+            line-height: 58px; 
+        }
+
+        &__paragraph {
+            margin: 22px 0 0 45px;
+            font-size: 16px;
+            font-weight: 500;
+            color: $primary-color;
+            line-height: 24px;
+            font-family: $fontmon;
+            opacity: 0.6;
+            width: 350px;
+            height: 72px
+        }
+
+        &__button {
+            @include button;
+            width: 280px;
+            height: 48px;
+            margin: 20px 0 0 45px;
+            background-color: transparent;
+        }
+
+        &:hover {
+            opacity: 1;
+            width: 418px;
+        }
+    }
+
+
+
+
+
+
+
+}

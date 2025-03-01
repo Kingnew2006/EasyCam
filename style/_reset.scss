@@ -26,7 +26,10 @@ html, body {
 	margin: 0 auto;
 	  
 }
-
+sup {
+    vertical-align: super;
+    font-size: smaller;
+}
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
