@@ -463,7 +463,7 @@ header {
   background-position: right 0px bottom 0px;
   background-repeat: no-repeat;
 }
-.main__service__app__title {
+.main__service__app__title, .main__readymade__title {
   margin: 70px 0 0 200px;
   font-size: 48px;
   font-weight: 700;
@@ -578,4 +578,68 @@ header {
 .main__rate__card:hover {
   opacity: 1;
   width: 418px;
+}
+
+.main__readymade {
+  width: 1600px;
+  height: 912px;
+  margin: 0 auto;
+}
+.main__readymade__title {
+  margin-top: 120px;
+  width: 432px;
+  font-family: "play", sans-serif;
+  line-height: 52px;
+}
+.main__readymade__main {
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+}
+.main__readymade__main__card {
+  width: 386px;
+  height: 480px;
+  border-radius: 10px;
+  box-shadow: #8A8A8F 0px 5px 10px 2px;
+  margin-top: 50px;
+}
+.main__readymade__main__card__img {
+  margin: 30px 0 0 90px;
+  width: 192px;
+  height: 192px;
+}
+.main__readymade__main__card__for {
+  margin: 11px 0 0 27px;
+  width: 77px;
+  height: 18px;
+  border-radius: 10px;
+  background-color: #5C17CD;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+}
+.main__readymade__main__card__title {
+  color: #1B1C1F;
+  margin: 23px 0 0 27px;
+  font-family: "montsserrat", sans-serif;
+  width: 330px;
+  height: 66px;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 600;
+}
+.main__readymade__main__card__per {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.main__readymade__main__card__permission {
+  width: 330px;
+  height: 24px;
+  opacity: 0.7;
+  font-weight: 500;
+  font-family: "montsserrat", sans-serif;
+  line-height: 24px;
 }/*# sourceMappingURL=style.css.map */
