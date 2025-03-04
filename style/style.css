@@ -368,28 +368,10 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-bottom: 1px #FFFFFF solid;
+  border-bottom: 3px #FFFFFF solid;
   width: 330px;
-  transition: all 0.5s linear;
+  transition: all 0.2s linear;
   color: #FFFFFF;
-}
-.header__main__comp__buttons__lines--active::after {
-  content: "";
-  position: relative;
-  width: 1px;
-  background-color: #FFFFFF;
-  height: 9px;
-  left: 155px;
-  top: 14px;
-}
-.header__main__comp__buttons__lines--active::before {
-  content: "";
-  position: relative;
-  width: 1px;
-  background-color: #FFFFFF;
-  height: 9px;
-  right: 155px;
-  top: 14px;
 }
 .header__main__comp__buttons__lines--deactive {
   display: flex;
@@ -399,25 +381,7 @@ header {
   width: 330px;
   color: #FFFFFF;
   opacity: 0.2;
-  transition: all 0.5s linear;
-}
-.header__main__comp__buttons__lines--deactive::after {
-  content: "";
-  position: relative;
-  width: 1px;
-  background-color: #FFFFFF;
-  height: 9px;
-  left: 155px;
-  top: 14px;
-}
-.header__main__comp__buttons__lines--deactive::before {
-  content: "";
-  position: relative;
-  width: 1px;
-  background-color: #FFFFFF;
-  height: 9px;
-  right: 155px;
-  top: 14px;
+  transition: all 0.3s linear;
 }
 
 .main__service {

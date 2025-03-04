@@ -20,8 +20,7 @@ const slidder = {
                 line.classList = 'header__main__comp__buttons__lines--deactive'
               }
         })  
-     v
-
+      
     } , 
 
     nextpic() {
@@ -79,7 +78,12 @@ loginbutton.addEventListener('click' , () => {
     loginform.classList.toggle('header__main__verification--unactive')
 })
 
+const MainForm = document.querySelector('.header__main__verification__input')
+MainForm.elements[0].value = 'User1'
+MainForm.elements[1].value = '123456789'
+console.log(MainForm.elements[0].value)  
 
 
 
+ 
  

@@ -291,32 +291,12 @@ header {
 
         &--active {
             @include center;
-            border-bottom: 1px $primary-color solid;
+            border-bottom: 3px $primary-color solid;
             width: 330px;
-            transition: all 0.5s linear;
+            transition: all 0.2s linear;
 
             color: $primary-color ;
-
-            &::after  {
-                content: "" ;
-                position: relative;
-                width: 1px;
-                background-color: $primary-color ;
-                height: 9px; 
-                left: 155px;
-                top: 14px
-                
-            } 
-
-            &::before {
-                content: "" ;
-                position: relative;
-                width: 1px;
-                background-color: $primary-color ;
-                height: 9px; 
-                right: 155px;
-                top: 14px
-            }
+ 
         } 
 
         &--deactive {
@@ -325,28 +305,8 @@ header {
             width: 330px;        
             color: $primary-color;
             opacity: 0.2;  
-            transition: all 0.5s linear;
-
-            &::after {
-                content: "" ;
-                position: relative;
-                width: 1px;
-                background-color: $primary-color ;
-                height: 9px; 
-                left: 155px;
-                top: 14px
-            }
-            
-
-            &::before {
-                content: "" ;
-                position: relative;
-                width: 1px;
-                background-color: $primary-color ;
-                height: 9px; 
-                right: 155px;
-                top: 14px
-            }
+            transition: all 0.3s linear;
+ 
         } 
     }
 }
