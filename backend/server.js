@@ -8,7 +8,7 @@ const port = 3000;
 app.use(cors());
 app.use(express.json());
 
-// Подключение к PostgreSQL (без .env)
+ 
 const pool = new Pool({
   user: "postgres",
   host: "localhost", 
@@ -17,9 +17,19 @@ const pool = new Pool({
   port: 5433,
 });
 
-// Эндпоинт для получения списка команд
+ 
 
 app.listen(port, () => {
   console.log(`Сервер запущен на http://localhost:${port}`);
-});
+}); 
+
+app.get('/news' , async (req , res) => {
+  try {
+    const result = await pool.query('Select * from news')
+    res.json(result.rows)
+  } catch (error) {
+    console.log('ошыбка при получений данных', error)
+    res.status(500).json({ error: "Ошибка сервера" });
+  }
+})
 
