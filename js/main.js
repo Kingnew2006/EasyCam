@@ -105,7 +105,7 @@ page__ready.cloneing()
 let newses = []
 let newsboard = document.querySelector('.main__news__board')
 let news = async () => {
-    let res = await fetch('http://localhost:3000/news') 
+    let res = await fetch('https://easycam-production.up.railway.app/news') 
     let data = await res.json()
     newses = data 
 
