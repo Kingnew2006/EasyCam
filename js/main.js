@@ -112,7 +112,7 @@ let news = async () => {
 }  
 let newsload = async () => {
   newses.forEach((key) => {
-     let {title , news__date , description } = key 
+     let {title , news__dater , description } = key 
          let newscard = document.createElement('div')  
          newscard.classList.add('main__news__board__card')
 
@@ -127,7 +127,7 @@ let newsload = async () => {
 
         let newsdata = document.createElement('div')
         newsdata.classList.add('main__news__board__card__twomain__date')
-        newsdata.textContent = `${news__date.split("T")[0]}`
+        newsdata.textContent = `${news__dater.split("T")[0]}`
         twomain.append(newsdata) 
 
         let descriptions = document.createElement('div') 
