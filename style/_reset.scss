@@ -1,4 +1,4 @@
-
+ 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -63,3 +63,22 @@ ul , li {
 input {
 	all: unset;
 }
+/* Убираем стандартный скроллбар */
+::-webkit-scrollbar {
+    width: 8px; /* Ширина скроллбара */
+}
+
+/* Фон скроллбара */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Цвет фона */
+    border-radius: 10px;
+}
+
+/* Ползунок (то, что двигается) */
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg,  #5C17CD ,  #386DF4); /* Градиентный цвет */
+    border-radius: 10px;
+}
+
+/* При наведении мыши */
+ 

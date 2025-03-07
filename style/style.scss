@@ -633,3 +633,84 @@ header {
 
     }
 }
+
+
+
+.main__news {
+    width: 1600px;
+    height: 657px;
+    margin: 0 auto; 
+
+
+    &__title {
+        margin: 70px 0 0 200px ;
+        font-family: $fontplay;
+        font-size: 48PX;
+        line-height: 110%;
+        font-weight: 700;
+    } 
+
+    &__board {
+        width: 800px;
+        height: 310px;
+        overflow:auto;
+         
+        margin: 50px 0 0 635px;
+        
+        
+    
+    
+    
+    
+    
+        &__card {
+            width: 766px;
+            height: 86px;
+            display: flex;
+            margin-top: 22px; 
+            border-top: black 1px solid;
+             
+             
+
+
+            &__title {
+                margin-top: 10px;
+                width: 250px;
+                height: 62px;
+                font-weight: 700;
+                font-size: 26px;
+                line-height: 120%; 
+
+            } 
+
+            &__twomain {
+
+
+                &__date {
+                    margin: 10px 0 0 109px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background-color: #384E85; 
+                    color: $primary-color;
+                    border-radius: 10px;
+                    width: 66px;
+                    height: 18px;
+
+                }
+
+                &__description {
+                    width:  406px;
+                    height: 48px;
+                    margin: 10px 0 0 110px;
+                    color: $black;
+                    opacity: 0.7;
+                    font-weight: 500;
+                    font-size: 16px;
+                    font-family: $fontmon;
+                    line-height: 150%;
+                }
+            }
+        }
+    }
+}

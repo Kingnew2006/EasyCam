@@ -74,6 +74,24 @@ input {
   all: unset;
 }
 
+/* Убираем стандартный скроллбар */
+::-webkit-scrollbar {
+  width: 8px; /* Ширина скроллбара */
+}
+
+/* Фон скроллбара */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Цвет фона */
+  border-radius: 10px;
+}
+
+/* Ползунок (то, что двигается) */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #5C17CD, #386DF4); /* Градиентный цвет */
+  border-radius: 10px;
+}
+
+/* При наведении мыши */
 @font-face {
   font-family: "play";
   src: url(/font/Play/Play-Regular.ttf) format("tff");
@@ -642,4 +660,60 @@ header {
   font-weight: 500;
   font-family: "montsserrat", sans-serif;
   line-height: 24px;
+}
+
+.main__news {
+  width: 1600px;
+  height: 657px;
+  margin: 0 auto;
+}
+.main__news__title {
+  margin: 70px 0 0 200px;
+  font-family: "play", sans-serif;
+  font-size: 48PX;
+  line-height: 110%;
+  font-weight: 700;
+}
+.main__news__board {
+  width: 800px;
+  height: 310px;
+  overflow: auto;
+  margin: 50px 0 0 635px;
+}
+.main__news__board__card {
+  width: 766px;
+  height: 86px;
+  display: flex;
+  margin-top: 22px;
+  border-top: black 1px solid;
+}
+.main__news__board__card__title {
+  margin-top: 10px;
+  width: 250px;
+  height: 62px;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 120%;
+}
+.main__news__board__card__twomain__date {
+  margin: 10px 0 0 109px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #384E85;
+  color: #FFFFFF;
+  border-radius: 10px;
+  width: 66px;
+  height: 18px;
+}
+.main__news__board__card__twomain__description {
+  width: 406px;
+  height: 48px;
+  margin: 10px 0 0 110px;
+  color: #1B1C1F;
+  opacity: 0.7;
+  font-weight: 500;
+  font-size: 16px;
+  font-family: "montsserrat", sans-serif;
+  line-height: 150%;
 }/*# sourceMappingURL=style.css.map */
