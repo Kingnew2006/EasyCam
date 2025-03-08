@@ -8,8 +8,8 @@
     <link rel="icon" href="./img/main//image 32.png">
 </head>
 <body> 
-    <header>
-        <div class="head">
+    <header id="header">
+        <div class="head" id="head">
             <ul class="head__navigate">
                 <li class="head__navigate__icon"><img src="./img/main/image 32.png" alt=""></li>
                 <li class="head__navigate__section head__navigate__section--first">Готовые решения</li>
@@ -78,7 +78,7 @@
     </header>
 
     
-    <main class="main__service">
+    <main id="service" class="main__service">
         <div class="main__service__chapter__title">Мы осуществляем  следующие услуги</div>
         <div class="main__service__chapter__paragraph">Кроме этого техническая поддержка всегда проконсультирует Вас по любым вопросам, а также произведет удаленную диагностику вашей системы по первому запросы и в самые кротчайшие сроки</div>
 
@@ -105,7 +105,7 @@
         </div>         
     </main>
 
-    <main class="main__service__app">
+    <main id="app" class="main__service__app">
         <div class="main__service__app__title">Скачайте наше приложение в AppStore и Google Play</div>
         <div class="main__service__app__plus">
             <div class="main__sevice__app__pluses">cмотрите онлайн-трансляцию с Ваших видеокамер</div>
@@ -123,7 +123,7 @@
     </main>
 
 
-    <main class="main__rate">
+    <main id="rate" class="main__rate">
         <div class="main__rate__title">Выберите тариф </div>
 
 
@@ -159,7 +159,7 @@
     </main>
 
 
-    <main class="main__readymade">
+    <main id="readymade" class="main__readymade">
         <h1 class="main__readymade__title">Готовые решения для подключения </h1> 
 
         <div class="main__readymade__main">
@@ -177,7 +177,7 @@
     </main>
 
 
-    <main class="main__news">
+    <main id="news" class="main__news">
         <div class="main__news__title">Новости компании</div>
         <div class="main__news__board">
             
@@ -185,7 +185,37 @@
     </main>
 
 
-    
+    <footer class="footer">
+        <div class="footer__groupone">
+            <div class="footer__groupone__contact">Контакты</div>
+            <div class="footer__groupone__number">+7 (473) 257-31-91</div>
+            <a class="footer__groupone__down" href="../EasyCam/img/footer/OUR CONTACTS.txt" download>Скачать реквизиты</a>
+            <div class="footer__groupone__imgmain">
+            <img src="../EasyCam/img/main__service__chapter/Download_on_the_App_Store_Badge_RU_RGB_blk_100317 2.png" class="footer__groupone__img" alt="">
+            <img src="../EasyCam/img/main__service__chapter/google-play-badge 2.png" class="footer__groupone__img" alt="">
+            </div>
+            <div class="footer__groupone__copyright">Copyright  ©  2013 - 2020 EASYCAM - облачное видеонаблюдение</div>
+        </div>
+        <div class="footer__grouptwo">
+            <div class="footer__grouptwo__link">Полезные ссылки</div> 
+            <a href="#header" class="footer__grouptwo__links footer__grouptwo__links__one">На главную</a>
+            <a href="#service" class="footer__grouptwo__links">Наши услуги</a>
+            <a href="#rate" class="footer__grouptwo__links">Тарифы</a>
+            <a href="#readymade" class="footer__grouptwo__links">Готовые решения</a>
+            <a href="#news" class="footer__grouptwo__links">Новости компании</a>
+            <a href="" class="footer__grouptwo__links">Личный кабинет</a>
+        </div>
+        <form class="footer__groupthree">
+            <div class="footer__groupthree__inputtitle">Оставьте заявку на подключение</div>
+            <div class="footer__groupthree__input__main">
+                <input class="footer__groupthree__input__main--input" type="text" placeholder="ваш телефон">
+            </div>
+            <div class="footer__groupthree__input__main2">
+                <input type="text" class="footer__groupthree__input__main2--input" placeholder="ваше имя">
+             </div>  
+             <button class="footer__groupthree__button">Оставить заявку</button>
+         </form>
+    </footer>  
     
 
     <script src="./js/main.js" ></script> 
