@@ -630,6 +630,7 @@ header {
   margin: 11px 0 0 27px;
   width: 77px;
   height: 18px;
+  font-size: 14px;
   border-radius: 10px;
   background-color: #5C17CD;
   display: flex;
@@ -705,6 +706,7 @@ header {
   border-radius: 10px;
   width: 66px;
   height: 18px;
+  font-size: 14px;
 }
 .main__news__board__card__twomain__description {
   width: 406px;

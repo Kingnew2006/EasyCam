@@ -24,7 +24,7 @@ client.connect().then(() => {
 // Создадим API-эндпоинт для получения данных
 app.get('/news', async (req, res) => {
   try {
-    const result = await client.query('SELECT * FROM news'); // Замените на свою таблицу
+    const result = await client.query('SELECT * FROM news');
     res.json(result.rows); // Отправляем данные в формате JSON
   } catch (err) {
     console.error('Ошибка запроса:', err.stack);
@@ -34,5 +34,5 @@ app.get('/news', async (req, res) => {
 
 // Запускаем сервер
 app.listen(port, () => {
-  console.log(`Сервер работает на http://localhost:${port}`);
+  console.log(`Сервер работает`);
 });

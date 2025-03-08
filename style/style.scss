@@ -133,7 +133,7 @@ header {
         position: fixed; 
         display: flex; 
         flex-direction: column;
-        margin: 100px 503px 0 503px; 
+        margin: 0 auto; 
         background-color: $primary-color;
         border-radius: 6px;
         box-shadow: 0px 10px 100px 30px;
@@ -590,6 +590,7 @@ header {
                 margin: 11px 0 0 27px; 
                 width: 77px;
                 height: 18px;
+                font-size: 14px;
                 border-radius: 10px;
                 background-color: $second-color; 
                 display: flex;
@@ -696,7 +697,7 @@ header {
                     border-radius: 10px;
                     width: 66px;
                     height: 18px;
-
+                    font-size: 14px;
                 }
 
                 &__description {
