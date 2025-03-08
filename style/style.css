@@ -228,7 +228,8 @@ header {
   position: fixed;
   display: flex;
   flex-direction: column;
-  margin: 100px 503px 0 503px;
+  top: 20%;
+  left: 38%;
   background-color: #FFFFFF;
   border-radius: 6px;
   box-shadow: 0px 10px 100px 30px;
