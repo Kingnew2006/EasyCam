@@ -154,6 +154,7 @@ a {
   text-shadow: 0 0 5px #386DF4, 0 0 10px white, 0 0 15px #5C17CD;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  z-index: 1000;
 }
 
 .spiner__main {
@@ -168,8 +169,9 @@ a {
   justify-content: center;
 }
 .spiner__main__lines {
-  border: 1px dotted rgb(255, 251, 251);
-  height: 10px;
+  border: 2px solid rgb(75, 74, 74);
+  border-radius: 10px;
+  height: 15px;
   position: absolute;
   animation: 1s spin infinite;
 }
