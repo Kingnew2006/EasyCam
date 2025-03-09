@@ -1,0 +1,112 @@
+@keyframes spin { 
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+    
+}
+@keyframes scaleing {
+    1% {
+        transform: scale(1);
+        opacity: 1;
+    }  
+
+    100% {
+        transform: scale(70);
+        opacity: 0.2;
+    }
+}
+
+@keyframes scaleingnorm {
+    1% {
+        transform: scale(1);
+        opacity: 1;
+    }  
+
+    100% {
+        transform: scale(50);
+        opacity: 1;
+    }
+}
+
+  
+
+
+
+.welcome  {
+    transform: scale(0.3);
+    color: white;
+    font-family: cursive;
+    font-style: oblique;
+    letter-spacing: 2px;
+    background: linear-gradient(90deg, #386DF4, white , #5C17CD);
+    text-shadow:  0 0 5px #386DF4, 0 0 10px white, 0 0 15px #5C17CD;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+
+}
+.spiner__main {
+    position: fixed; 
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    backdrop-filter: blur(20px);
+    display: flex ;
+    align-items: center;
+    justify-content: center; 
+    
+    
+    
+
+    &__lines {
+        border: 1px dotted rgb(255, 251, 251);
+        height: 10px;
+        position: absolute;
+        animation: 1s spin infinite ;
+        
+
+
+    }
+}
+
+.line {
+
+    &--1 {
+        transform: rotateX(0deg)  translateY(-20px); animation-delay: 0.125s;
+    }
+
+    &--2 {
+        transform: rotate(45deg) translatey(-20px); animation-delay: 0.250s;
+        
+    }
+
+    &--3 {
+        transform: rotate(90deg) translateY(-20px); animation-delay: 0.375s;
+    }
+    &--4 {
+        transform: rotate(135deg) translateY(-20px); animation-delay: 0.5s;
+    }
+    &--5 {
+        transform: rotate(180deg) translateY(-20px); animation-delay: 0.625s;
+    }
+    &--6 {
+        transform: rotate(225deg) translateY(-20px); animation-delay: 0.750s;
+    }
+    &--7 {
+        transform: rotate(270deg) translateY(-20px); animation-delay: 0.875s;
+    }
+    &--8 {
+        transform: rotate(315deg) translateY(-20px); animation-delay: 1s;
+    }
+}
+
+.off {
+    opacity: 0;
+    z-index: -1;
+}
+.out {
+     animation: 1s scaleing normal;
+}
+
+.none {
+    display: none;
+}

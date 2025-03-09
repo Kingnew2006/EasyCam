@@ -145,5 +145,19 @@ news().then(()=> {console.log(newses) , newsload()  })
  
  
    
+let spiner = document.querySelector('.spiner__main')
+let wel = document.querySelector('.welcome')
+window.onload = (e) => {
+    setTimeout(() => {
+        spiner.classList.add('out')
+        
+    }, 500)
+    setTimeout(() => {
+        spiner.classList.add('off')
+        
+    }, 1000)
+    setTimeout(() => {
+        spiner.classList = 'none'
+    }, 1000)
 
-     
+}    
