@@ -328,6 +328,9 @@ header {
   height: 48px;
   margin: 33px 0 0 392px;
 }
+.header__main__titles__button:active {
+  transform: translateY(1px);
+}
 .header__main__titles__button:hover {
   box-shadow: 0px 5px 20px #386DF4;
 }
@@ -391,11 +394,12 @@ header {
 .header__main__verification__input__main--one, .footer__groupthree__input__main2, .footer__groupthree__input__main, .header__main__verification__input__main--two {
   width: 471px;
   height: 55px;
-  border: 1px solid gray;
   border-radius: 6px;
+  border: 1px transparent solid;
   margin: 26px 0 0 33px;
   display: flex;
   align-items: center;
+  box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2) inset;
 }
 .header__main__verification__input__main--one--input {
   margin-left: 18px;
@@ -427,10 +431,21 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 25px 0 0 33px;
+  margin: 5px 0 0 33px;
+}
+.header__main__verification__input--button:active {
+  transform: translateY(1px);
 }
 .header__main__verification__input--button:hover {
   box-shadow: 0px 5px 20px #386DF4;
+}
+.header__main__verification__input__invalid--area {
+  margin: 5px 0 0 33px;
+  color: red;
+  font-family: "Courier New", Courier, monospace;
+  opacity: 0.7;
+  font-size: 14;
+  height: 10px;
 }
 .header__main__verification__input--forgot {
   color: #8A8A8F;
@@ -469,6 +484,9 @@ header {
   width: 36px;
   height: 36px;
 }
+.header__main__comp__buttons--perv:active {
+  transform: translateY(1px);
+}
 .header__main__comp__buttons--perv:hover {
   box-shadow: 0px 5px 20px #386DF4;
 }
@@ -486,6 +504,9 @@ header {
   font-family: "montsserrat", sans-serif;
   width: 36px;
   height: 36px;
+}
+.header__main__comp__buttons--next:active {
+  transform: translateY(1px);
 }
 .header__main__comp__buttons--next:hover {
   box-shadow: 0px 5px 20px #386DF4;
@@ -702,6 +723,9 @@ header {
   height: 48px;
   margin: 20px 0 0 45px;
   background-color: transparent;
+}
+.main__rate__card__button:active {
+  transform: translateY(1px);
 }
 .main__rate__card__button:hover {
   box-shadow: 0px 5px 20px #386DF4;
@@ -945,6 +969,13 @@ header {
   color: #FFFFFF;
   background-color: #386DF4;
 }
+.footer__groupthree__button:active {
+  transform: translateY(1px);
+}
 .footer__groupthree__button:hover {
   box-shadow: 0px 5px 20px #386DF4;
+}
+
+.notinvalid {
+  border: red 1px solid;
 }/*# sourceMappingURL=style.css.map */

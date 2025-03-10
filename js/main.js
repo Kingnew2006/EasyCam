@@ -80,10 +80,7 @@ loginbutton.addEventListener('click' , () => {
     loginform.classList.toggle('header__main__verification--unactive')
 })
 
-const MainForm = document.querySelector('.header__main__verification__input')
-MainForm.elements[0].value = 'User1'
-MainForm.elements[1].value = '123456789'
-console.log(MainForm.elements[0].value)  
+
 let readycard = document.querySelector('.main__readymade__main__card')
 let page__ready = {
 
@@ -114,6 +111,8 @@ let news = async () => {
 
 
 }  
+
+
 let newsload = async () => {
   newses.forEach((key) => {
      let {title , news__dater , description } = key 
@@ -145,10 +144,9 @@ let newsload = async () => {
   }) 
 }
 
-news().then(()=> {console.log(newses) , newsload()  })
+news().then(()=> {newsload()})
  
  
-   
 let spiner = document.querySelector('.spiner__main')
 let wel = document.querySelector('.welcome')
 window.onload = (e) => {
@@ -166,17 +164,21 @@ window.onload = (e) => {
 
 }    
 
-let users = async (Name) => {
+let users = async (Name,pass) => {
     let SiteUsers = await fetch('https://easycam-production.up.railway.app/users')  
     let res = await SiteUsers.json() 
-
-    return res.some(user => user.username === Name); // Возвращает true, если пользователь найден
+    let result 
+    let ouruser = res.some(user => user.username === Name && user.password === pass );  
+    let same = res.some(user => user.username === Name && user.password != pass ); 
+    if (ouruser)  {
+         result = 'ouruser'
+        return result }
+        else if (same){
+            result = 'same' 
+            return result
+        } else 
+        return false
 }
-
- 
-
-
- 
 
 
 let formm = document.querySelector('.form') 
@@ -185,11 +187,10 @@ formm.addEventListener("submit", async (event) => {
 
     const formData = new FormData(formm); 
     const data = Object.fromEntries(formData.entries()); // Преобразуем FormData в объект
-    console.log(data); 
-    let valid = await users(`${data.user}`) 
+    let {user , password } = data
+    let valid = await users(`${user.trim()}`,`${password.trim()}`) 
     console.log(valid)
-    if (valid === false) { 
-        
+    if (valid === false && inputs.passinputmain.classList.contains('notinvalid') === false && inputs.userinput.value.trim().length > 5) { 
             const response = await fetch('https://easycam-production.up.railway.app/form', {
             method: 'POST',
             headers: {
@@ -198,15 +199,54 @@ formm.addEventListener("submit", async (event) => {
             body: JSON.stringify(data),
             
         }
-    
+
     ) 
+        loginbutton.click() 
+        loginbutton.textContent = `${user.trim()}` 
+    
+    
     const result = await response.json();
      console.log("Ответ сервера:", result);
     ;
-    } else {
-        console.log('you are logined')
-    }
-
+    } else if (valid == 'ouruser')  {
+          
+            loginbutton.click() 
+            loginbutton.textContent = `${user.trim()}` 
+        
     
-});
+    } else if (valid === 'same') {
+         inputs.invalid.textContent = 'Имя пользователя занят'
+    }
+}); 
+
+
+let inputs = {
+  userinputmain: document.querySelector('.header__main__verification__input__main--one'),
+  passinputmain: document.querySelector('.header__main__verification__input__main--two'),
+  userinput: document.querySelector('.header__main__verification__input__main--one--input'),
+  passinput: document.querySelector('.header__main__verification__input__main--two--input'),
+  invalid: document.querySelector('.header__main__verification__input__invalid--area')
+}
+
+
+let inputnotvalid = (obj) => {
+    if (obj === 'user') {
+        inputs.userinputmain.classList.add('notinvalid')
+    } else if (obj === 'pass') {
+        inputs.passinputmain.classList.add('notinvalid')
+    } 
+} 
+
+
+inputs.passinput.addEventListener('input' , (e) => {
+    
+    if (inputs.passinput.value.length < 8) {
+        inputnotvalid('pass')
+        inputs.invalid.textContent = 'Пароль минимум должен иметь 8 символов'
+    } else if (inputs.passinput.value.length >= 8) {
+        inputs.passinputmain.classList.remove('notinvalid') 
+        inputs.invalid.textContent = ''
+    }
+})
+
  

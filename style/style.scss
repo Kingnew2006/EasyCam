@@ -203,11 +203,14 @@ header {
             &__main--one {
                 width: 471px;
                 height: 55px;
-                border: 1px solid gray;
                 border-radius: 6px;
+                border: 1px transparent solid;
                 margin: 26px 0 0 33px   ;
                 display: flex;
                 align-items: center;
+                -webkit-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2) inset;
+                -moz-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2) inset;
+                box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2) inset;
 
 
                 &--input {
@@ -239,7 +242,17 @@ header {
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                margin: 25px 0 0 33px ;
+                margin: 5px 0 0 33px ;
+            }
+
+            &__invalid--area {
+                margin: 5px 0 0 33px; 
+                color: red;
+                font-family: 'Courier New', Courier, monospace;
+                opacity: 0.7;
+                font-size: 14;
+                height: 10px;
+
             }
 
 
@@ -858,5 +871,6 @@ header {
 
     
 }
-
- 
+.notinvalid {
+    border: red 1px solid; 
+} 

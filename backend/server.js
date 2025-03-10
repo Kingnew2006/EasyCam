@@ -46,14 +46,15 @@ app.get('/users', async (req, res) => {
 app.post('/form', async (req, res) => {
   try {
     const { user, password } = req.body;
-    
+    const username = user.trim() 
+    const userpass = password.trim() 
     if (!user || !password) {
       return res.status(400).json({ error: 'Заполните все поля' });
     } 
 
     const result = await client.query(
       'INSERT INTO users (username, password) VALUES ($1, $2) RETURNING *',
-      [user, password]
+      [username, userpass]
     );
 
     res.status(201).json({ message: 'Пользователь добавлен', user: result.rows[0] });
