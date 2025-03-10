@@ -1,3 +1,5 @@
+ 
+
 const lines = document.querySelector('.header__main__comp__buttons__lines')
 const arrline = Array.from(lines.children) 
 const slidder = {
@@ -161,3 +163,23 @@ window.onload = (e) => {
     }, 1000)
 
 }    
+
+let formm = document.querySelector('.form') 
+formm.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(formm); 
+    const data = Object.fromEntries(formData.entries()); // Преобразуем FormData в объект
+    console.log(data); 
+
+    const response = await fetch('https://easycam-production.up.railway.app/form', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+    });
+
+    const result = await response.json();
+    console.log("Ответ сервера:", result);
+});
