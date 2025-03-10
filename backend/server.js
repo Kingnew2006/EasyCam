@@ -31,6 +31,16 @@ app.get('/news', async (req, res) => {
     console.error('Ошибка запроса:', err.stack);
     res.status(500).send('Ошибка сервера');
   }
+}); 
+
+app.get('/users', async (req, res) => {
+  try {
+    const result = await client.query('SELECT * FROM users');
+    res.json(result.rows); // Отправляем данные в формате JSON
+  } catch (err) {
+    console.error('Ошибка запроса:', err.stack);
+    res.status(500).send('Ошибка сервера');
+  }
 });
 
 app.post('/form', async (req, res) => {
