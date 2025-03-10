@@ -170,17 +170,11 @@ let users = async (Name) => {
     let SiteUsers = await fetch('https://easycam-production.up.railway.app/users')  
     let res = await SiteUsers.json() 
 
-    res.forEach(user => {
-        if (user.username === Name) {
-            return false 
-        } else 
-        return true 
+    return res.some(user => user.username === Name); // Возвращает true, если пользователь найден
+}
 
-        
-    })
-    
-} 
  
+
 
  
 
@@ -192,9 +186,10 @@ formm.addEventListener("submit", async (event) => {
     const formData = new FormData(formm); 
     const data = Object.fromEntries(formData.entries()); // Преобразуем FormData в объект
     console.log(data); 
-    let valid = await users(data.user) 
+    let valid = await users(`${data.user}`) 
     console.log(valid)
-    if (valid === true) {
+    if (valid === false) { 
+        
             const response = await fetch('https://easycam-production.up.railway.app/form', {
             method: 'POST',
             headers: {
@@ -204,13 +199,14 @@ formm.addEventListener("submit", async (event) => {
             
         }
     
-    )
-      
+    ) 
+    const result = await response.json();
      console.log("Ответ сервера:", result);
     ;
     } else {
         console.log('you are logined')
     }
 
-   
+    
 });
+ 
