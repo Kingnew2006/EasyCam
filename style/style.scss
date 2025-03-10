@@ -1,0 +1,860 @@
+@use 'mixins'  as *;
+@use 'reset' as *;
+@use 'fonts' as *;
+@use 'spiner' as *;
+
+header {
+    margin: 0 auto;
+    width: 1600px; 
+    height: 748px;
+    background-image: url(../img/main/Бэкграунд.jpg); 
+     
+} 
+.head {
+    width: 1205px;
+     height: 65px; 
+    padding-top: 16px;
+    margin-left: 198px;
+    
+    &__navigate { 
+        display: flex;
+        align-items: center;
+         
+         
+         
+
+         &__section {
+            font-family: $fontmon;
+            color: $primary-color;
+            font-size: 16px;
+            font-weight: 400; 
+            line-height: 17.6px;
+            margin-left: 39px;
+
+            &:hover {
+                transform: scale(1.1);
+            };
+
+            &--first {
+                margin-left: 473px;
+                font-weight: 500;
+            }
+         }
+
+         &__button {
+            color: $primary-color;
+            margin-left: 73px; 
+            width: 112px;
+            height: 34px;
+            @include center;
+            border: 1px $second-color solid;
+            border-radius: 4px;
+            font-family: $fontmon;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 17.6px;
+
+            &:hover {
+                box-shadow: 0px 5px 50px $second-color;
+            }
+         }
+    } 
+
+}
+.header__main {
+    display: flex;
+    &__titles {
+
+        &__first {
+            margin: 100px 0px 0px  200px;
+            color: $primary-color;
+            font-family: $fontplay; 
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 53px;
+            width: 442px;
+            height: 159px;
+        }
+
+        &__scrool {
+            display: flex;
+
+
+            &__line {
+                margin: 87px 0px 0px 200px;
+                width: 81px;
+                height: 1px;
+                background-color: $primary-color;
+                
+            } 
+            &__text {
+                margin: 79px 0 0 18px;
+                font-family: $fontmon;
+                color: $primary-color;
+                font-size: 16px;
+                font-weight: 600;
+            }
+
+            &__para {
+                width: 240px;
+                height: 84px;
+                margin: 77px 0 0 43px;
+                font-family: $fontmonthin;
+                color: $primary-color;
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 21px;
+                 
+            }
+        }
+
+    &__button {
+        @include button;
+        width: 240px;
+        height: 48px;
+        margin: 33px 0 0 392px;
+    }
+    } 
+
+
+    &__comp {
+
+        &--active {
+            margin: 80px 0 0 115px;
+            
+        } 
+
+        
+      
+    }
+
+
+    &__verification {
+        width: 539px;
+        height: 351px;
+        position: fixed; 
+        display: flex; 
+        flex-direction: column;
+        top: 20%;
+        left: 38%;
+        background-color: $primary-color;
+        border-radius: 6px;
+        box-shadow: 0px 10px 100px 30px;
+        z-index: 1000;
+
+        &--active {
+            display: flex;
+        } 
+
+        &--unactive {
+            display: none;
+        }
+        
+
+    &__title {
+        display: flex;
+
+        &__name {
+            margin: 34px 0 0 49px; 
+            font-family: $fontmon;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 20px
+
+        } 
+
+        &__exit {
+            width: 30px;
+            height: 18px;
+            margin:  28px 0 0 293px;
+            
+
+            
+
+            &::before {
+                content: "";
+                width: 2px;
+                height: 18px;
+                background-color: black;
+                position: absolute;
+                transform: rotate(45deg);
+
+            }
+
+            &::after {
+                content: "";
+                width: 2px;
+                height: 18px;
+                background-color: black;
+                position: absolute;
+                transform: rotate(-45deg);
+
+
+            }
+        }
+    }
+         
+
+        &__input {
+            display: flex;
+            flex-direction: column; 
+            
+
+            &__main--one {
+                width: 471px;
+                height: 55px;
+                border: 1px solid gray;
+                border-radius: 6px;
+                margin: 26px 0 0 33px   ;
+                display: flex;
+                align-items: center;
+
+
+                &--input {
+                    margin-left: 18px;
+                    
+                }
+
+            }
+
+            &__main--two {
+                @extend .header__main__verification__input__main--one;
+                margin-top: 12px;
+                
+
+                &--input {
+                    margin-left: 18px;
+                    width: 193px;
+                }
+
+                &--visibality {
+                    margin-left: 220px; 
+                }
+            }
+
+            &--button {
+                @include button ;
+                width: 471px; 
+                height: 55px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 25px 0 0 33px ;
+            }
+
+
+
+            &--forgot {
+                color: #8A8A8F;
+                margin: 12px 0 0 394px;
+            }
+        }
+        
+    }
+}
+.visibility-active {
+
+
+    &::before {
+        content: '';
+        width: 1px;
+        height: 18px;
+        border-radius: 10px;
+        background-color: #384E85; 
+        position: absolute;
+        transform: rotate(40deg);
+        right: 62px;
+        top: 166px;
+
+    }
+}
+.header__main__comp__buttons {
+    display: flex;
+    margin: 37px 0 0 200px;
+    gap: 10px;
+    &--perv {
+        @include button;
+        width: 36px;
+        height: 36px;
+    }
+
+    &--next {
+        @include button;
+        width: 36px;
+        height: 36px;
+    } 
+
+
+    &__lines {
+        display: flex; 
+        font-family: $fontplay;
+        margin-left: 132px;
+
+
+
+        &--active {
+            @include center;
+            border-bottom: 3px $primary-color solid;
+            width: 330px;
+            transition: all 0.2s linear;
+
+            color: $primary-color ;
+ 
+        } 
+
+        &--deactive {
+            @include center; 
+            border-bottom: 1px $primary-color solid; 
+            width: 330px;        
+            color: $primary-color;
+            opacity: 0.2;  
+            transition: all 0.3s linear;
+ 
+        } 
+    }
+}
+
+
+.main__service {
+    width: 1600px;
+    height: 935px;
+    background-color: $primary-color;
+    margin: 0 auto;
+
+    &__chapter__title {
+        margin: 120px 0 0 200px;
+        font-size: 48px;
+        font-weight: 700;
+        color: $black;
+        line-height: 53px;
+        width: 442px;
+        height: 106px;
+    }
+
+    &__chapter__paragraph {
+        margin: 40px 0 0 660px;
+        color: $black;
+        font-size: 18px;
+        font-weight: 500;
+        font-family: $fontmon;
+        width: 646px;
+        height: 75px;
+        opacity: 0.7;
+
+        &::before { 
+            content: "";
+            width: 1px;
+            height: 62px;
+            display: inline-block;
+            background-color: $second-color; 
+            position: absolute;
+            right: 1200px;
+            
+            
+
+
+        }
+    }
+
+
+    &__chapter__main {
+        display: flex;
+        gap: 44px;
+        margin: 40px 0 0 201px;
+    }
+
+    &__chapter__firstTwo__main { 
+        display: flex;
+        gap: 44px;
+    }
+
+
+    &__chapter__card {
+        width: 370px;
+        height: 434px;
+        box-shadow: #8A8A8F 0px 5px 10px 2px;
+        border-radius: 10px;
+
+
+        &__img {
+            width: 164px;
+            height: 164px;
+            margin: 50px 0 0 103px;
+        } 
+
+        &__title {
+            margin: 30px 0 0 45px;
+            font-size: 20px;
+            font-weight: 700;
+            color: $black;
+            line-height: 24px;
+            font-family: $fontmon;
+        }
+
+        &__paragraph {
+            margin: 20px 0 0 45px;
+            font-size: 16px;
+            font-weight: 500;
+            color: $black;
+            line-height: 24px;
+            font-family: $fontmon;
+            opacity: 0.7;
+        }
+    }
+
+
+
+
+    &__app {
+        width: 1600px;
+        height: 553px;
+        margin:  0 auto;
+
+        
+        background: url(../img/main__service__chapter/Create\ Your\ Profile\ 1.png);
+        background-position: right 0px bottom 0px;
+        background-repeat: no-repeat; 
+
+        &__title {
+            margin: 70px 0 0 200px;
+            font-size: 48px;
+            font-weight: 700;
+            color: $black;
+            line-height: 52px;
+            width: 687px;
+            height: 106px;
+        } 
+
+        &__plus {
+            width: 646px;
+            height: 100px;
+            margin: 50px 0 0 225px;
+            color: $black;
+            opacity: 0.7;
+        } 
+
+        &__link {
+            margin: 41px 0 0 200px;
+        }
+    }
+}
+
+.main__sevice__app__pluses {
+    
+
+    &::before {
+        content: "";
+        width: 12px;
+        height: 15px;
+        background: url(../img/main__service__chapter/arrow.svg);
+        background-repeat: no-repeat;
+        display: inline-block;
+        position: relative;
+        top: 3px;
+        right: 4px ;
+    }
+}
+
+
+
+.main__rate {
+    margin: 0 auto;
+    width: 1600px;
+    height: 733px;
+    background: url(../img/main__rate__section/Бэк\ граунд.jpg);
+
+
+    &__title {
+        margin: 0px 0 0 200px;
+        padding-top: 120px;
+        font-size: 48px;
+        font-weight: 700;
+        color: $primary-color;
+        line-height: 53px;
+        width: 442px;
+        height: 53px;
+
+    } 
+
+    &__card__main {
+        display: flex;
+        gap: 21px;
+        margin: 50px 0 0 200px;
+    }
+
+
+    &__card__firsttwo {
+        display: flex;
+        gap: 21px;
+    }
+
+    &__card {
+        width: 370px;
+        height: 390px;
+        border: 1px solid $primary-color;
+        border-radius: 10px;
+        opacity: 0.7;
+
+
+        &__title {
+            margin: 50px 0 0 45px;
+            font-size: 26px;
+            font-weight: 700;
+            color: $primary-color;
+            line-height: 31px;
+            font-family: $fontplay;
+        }
+
+        &__price {
+            font-family: $fontplay;
+            height: 59px;
+            color: $primary-color;
+            font-size: 48px;
+            font-weight: 700;       
+            margin: 30px 0 0 45px;
+            line-height: 58px; 
+        }
+
+        &__paragraph {
+            margin: 22px 0 0 45px;
+            font-size: 16px;
+            font-weight: 500;
+            color: $primary-color;
+            line-height: 24px;
+            font-family: $fontmon;
+            opacity: 0.6;
+            width: 350px;
+            height: 72px
+        }
+
+        &__button {
+            @include button;
+            width: 280px;
+            height: 48px;
+            margin: 20px 0 0 45px;
+            background-color: transparent;
+        }
+
+        &:hover {
+            opacity: 1;
+            width: 418px;
+        }
+    }
+
+
+
+
+
+
+
+}
+
+
+
+
+.main__readymade {
+    width: 1600px;
+    height: 912px;
+    margin: 0 auto;
+
+
+    &__title {
+        @extend .main__service__app__title ; 
+        margin-top: 120px  ; 
+        width: 432px ;
+        font-family: $fontplay;
+        line-height: 52px;
+
+
+    } 
+
+
+    &__main {
+        display: flex;
+        justify-content: center;
+        gap: 22px;
+
+
+        &__card {
+            width: 386px;
+            height: 480px;
+            border-radius: 10px;
+            box-shadow: #8A8A8F 0px 5px 10px 2px;
+            margin-top: 50px;
+
+            &__img {
+                margin: 30px 0 0 90px;
+                width:  192px;
+                height: 192px;
+
+            } 
+
+            &__for {
+                margin: 11px 0 0 27px; 
+                width: 77px;
+                height: 18px;
+                font-size: 14px;
+                border-radius: 10px;
+                background-color: $second-color; 
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: $primary-color;
+            } 
+
+            &__title {
+                color: $black;
+                margin: 23px 0 0 27px;
+                font-family: $fontmon;
+                width: 330px;
+                height: 66px;
+                font-size: 16px;
+                line-height: 22px;
+                font-weight: 600; 
+            }
+
+            &__per {
+                display: flex;
+                justify-content: center; 
+                flex-direction: column; 
+                align-items: center;
+
+
+
+
+                &mission {
+                    width: 330px;
+                    height: 24px;
+                    opacity: 0.7;
+                    font-weight: 500;
+                    font-family: $fontmon; 
+                    line-height: 24px; 
+                }
+            }
+
+
+        }
+
+    }
+}
+
+
+
+.main__news {
+    width: 1600px;
+    height: 657px;
+    margin: 0 auto; 
+
+
+    &__title {
+        margin: 70px 0 0 200px ;
+        font-family: $fontplay;
+        font-size: 48PX;
+        line-height: 110%;
+        font-weight: 700;
+    } 
+
+    &__board {
+        width: 800px;
+        height: 310px;
+        overflow:auto;
+         
+        margin: 50px 0 0 635px;
+        
+        
+    
+    
+    
+    
+    
+        &__card {
+            width: 766px;
+            height: 86px;
+            display: flex;
+            margin-top: 22px; 
+            border-top: black 1px solid;
+             
+             
+
+
+            &__title {
+                margin-top: 10px;
+                width: 250px;
+                height: 62px;
+                font-weight: 700;
+                font-size: 26px;
+                line-height: 120%; 
+
+            } 
+
+            &__twomain {
+
+
+                &__date {
+                    margin: 10px 0 0 109px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background-color: #384E85; 
+                    color: $primary-color;
+                    border-radius: 10px;
+                    width: 66px;
+                    height: 18px;
+                    font-size: 14px;
+                }
+
+                &__description {
+                    width:  406px;
+                    height: 48px;
+                    margin: 10px 0 0 110px;
+                    color: $black;
+                    opacity: 0.7;
+                    font-weight: 500;
+                    font-size: 16px;
+                    font-family: $fontmon;
+                    line-height: 150%;
+                }
+            }
+        }
+    }
+}
+
+
+.footer {
+    margin: 0 auto; 
+    width: 1600px;
+    height: 372px;
+    background: url(../img/footer/Бэк\ граунд.jpg); 
+    display: flex;
+
+    &__groupone {
+        width: 300px;
+        height: 219px;
+        margin: 70px 0 0 196px; 
+
+        &__contact {
+            font-family: $fontmon;
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 130%;
+            color: $primary-color;
+
+        }
+
+        &__number {
+            margin-top: 20px;
+            font-size: 16px;
+            font-weight: 500;
+            font-family: $fontmon;
+            line-height: 110%;
+            color: $primary-color;
+        }
+
+        &__down {
+            margin-top: 10px;
+            font-size: 16px;
+            font-weight: 400;
+            font-family: $fontmon;
+            line-height: 130%;
+            color: #53ACFF;
+        }
+
+        &__imgmain {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        &__img {
+            border-radius: 10px;
+            width: 123px;
+            height: 39px;
+            border: 1px solid $primary-color;
+        }
+
+        &__copyright {
+            margin-top: 33px;
+            font-size: 14px;
+            font-weight: 400;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            opacity: 0.5;
+            line-height: 130%;
+        }
+
+
+        
+    } 
+
+    &__grouptwo {
+        width: 175px;
+        height: 219px;
+        margin: 70px 0 0 137px;
+
+        &__link {
+            @extend .footer__groupone__contact;
+        }
+
+        &__links {
+            display: flex;
+            flex-direction: column;
+            margin-top: 10px;
+            color: $primary-color;
+            line-height: 130%;
+            font-family: $fontmon;
+            font-size: 16px;        
+            font-weight: 400;
+            
+
+          
+        }
+    }
+
+    &__groupthree {
+        width: 406px;
+        height: 232px;
+        margin: 70px 0 0 183px;
+
+        &__inputtitle {
+            @extend .footer__groupone__contact;
+
+           
+        }
+
+        &__input__main {
+                @extend .header__main__verification__input__main--one;  
+                margin:  17px 0 0 0 ; 
+                background-color: $primary-color;
+                width: 397px;
+                height: 60px;
+
+                &--input {
+                    margin-left: 18px;
+                    width: 193px;
+                }
+            } 
+
+        &__input__main2 {
+                @extend .header__main__verification__input__main--one;  
+                margin:  5px 0 0 0 ; 
+                background-color: $primary-color;
+                width: 397px;
+                height: 60px;
+
+                &--input {
+                    margin-left: 18px;
+                    width: 193px;
+            }
+        }    
+
+        &__button {
+            @include button;
+            width: 397px;
+            height: 60px;
+            margin: 11px 0 0 0;
+            color: $primary-color;
+            background-color: $third-color;
+        }
+    }
+
+    
+}

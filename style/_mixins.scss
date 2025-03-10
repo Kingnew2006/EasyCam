@@ -1,0 +1,44 @@
+$primary-color: #FFFFFF;
+$black :  #1B1C1F; 
+$second-color : #5C17CD; 
+$third-color:  #386DF4;
+$fontmon : 'montsserrat' , sans-serif; 
+$fontplay : 'play' , sans-serif; 
+$fontmonthin : 'montsserratthin' , sans-serif;
+
+@mixin font-para($size: 16px) {
+    font-size: $size;
+    color:  #282828; 
+    opacity: 0.7; 
+    font-weight: 500;
+    line-height: 25px; 
+     
+} 
+
+@mixin center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} 
+
+@mixin button {
+    background-color: $third-color;
+    @include center; 
+    border: $third-color 1px solid;
+    border-radius: 4px ;
+    color: $primary-color;
+    font-size: 18px;
+    line-height: 20px;
+    font-weight: 700;
+    font-family: $fontmon; 
+
+
+    &:hover {
+        box-shadow: 0px 5px 20px #386DF4 ;
+    }
+
+}
+
+@mixin input {
+    
+}
