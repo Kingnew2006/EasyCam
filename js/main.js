@@ -109,7 +109,9 @@ let newsboard = document.querySelector('.main__news__board')
 let news = async () => {
     let res = await fetch('https://easycam-production.up.railway.app/news') 
     let data = await res.json()
-    newses = data 
+    newses = data  
+
+
 
 }  
 let newsload = async () => {
@@ -164,6 +166,25 @@ window.onload = (e) => {
 
 }    
 
+let users = async (Name) => {
+    let SiteUsers = await fetch('https://easycam-production.up.railway.app/users')  
+    let res = await SiteUsers.json() 
+
+    res.forEach(user => {
+        if (user.username === Name) {
+            return false 
+        } else 
+        return true 
+
+        
+    })
+    
+} 
+ 
+
+ 
+
+
 let formm = document.querySelector('.form') 
 formm.addEventListener("submit", async (event) => {
     event.preventDefault();
@@ -171,15 +192,25 @@ formm.addEventListener("submit", async (event) => {
     const formData = new FormData(formm); 
     const data = Object.fromEntries(formData.entries()); // Преобразуем FormData в объект
     console.log(data); 
+    let valid = await users(data.user) 
+    console.log(valid)
+    if (valid === true) {
+            const response = await fetch('https://easycam-production.up.railway.app/form', {
+            method: 'POST',
+            headers: {
+            'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+            
+        }
+    
+    )
+      
+     console.log("Ответ сервера:", result);
+    ;
+    } else {
+        console.log('you are logined')
+    }
 
-    const response = await fetch('https://easycam-production.up.railway.app/form', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-    });
-
-    const result = await response.json();
-    console.log("Ответ сервера:", result);
+   
 });
