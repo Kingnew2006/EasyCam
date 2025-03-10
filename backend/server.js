@@ -46,8 +46,8 @@ app.get('/users', async (req, res) => {
 app.post('/form', async (req, res) => {
   try {
     const { user, password } = req.body;
-    const username = user.trim() 
-    const userpass = password.trim() 
+    const username = user.replace(/\s/g, '')
+    const userpass = password.replace(/\s/g, '')
     if (!user || !password) {
       return res.status(400).json({ error: 'Заполните все поля' });
     } 

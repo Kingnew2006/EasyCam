@@ -188,7 +188,7 @@ formm.addEventListener("submit", async (event) => {
     const formData = new FormData(formm); 
     const data = Object.fromEntries(formData.entries()); // Преобразуем FormData в объект
     let {user , password } = data
-    let valid = await users(`${user.trim()}`,`${password.trim()}`) 
+    let valid = await users(`${user.replace(/\s/g, '')}`,`${password.replace(/\s/g, '')}`) 
     console.log(valid)
     if (valid === false && inputs.passinputmain.classList.contains('notinvalid') === false && inputs.userinput.value.trim().length > 5) { 
             const response = await fetch('https://easycam-production.up.railway.app/form', {
@@ -202,7 +202,7 @@ formm.addEventListener("submit", async (event) => {
 
     ) 
         loginbutton.click() 
-        loginbutton.textContent = `${user.trim()}` 
+        loginbutton.textContent = `${user.replace(/\s/g, '')}` 
     
     
     const result = await response.json();
@@ -211,7 +211,7 @@ formm.addEventListener("submit", async (event) => {
     } else if (valid == 'ouruser')  {
           
             loginbutton.click() 
-            loginbutton.textContent = `${user.trim()}` 
+            loginbutton.textContent = `${user.replace(/\s/g, '')}` 
         
     
     } else if (valid === 'same') {
