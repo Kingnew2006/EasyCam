@@ -56,25 +56,36 @@ app.get('/news', async (req, res) => {
   }
 }); 
 
-app.post("/upload", async (req, res) => {
-  const { title, url } = req.body; // Получаем заголовок и ссылку
-
-  if (!title || !url) {
-      return res.status(400).json({ error: "Ошибка: нужно указать заголовок и URL видео" });
-  }
-
+app.post("/add-videos", async (req, res) => {
   try {
-      // Добавляем запись в базу данных
-      await client.query(
-          "INSERT INTO videos (title, url) VALUES ($1, $2)", 
-          [title, url]
-      );
+    // Запрашиваем все видео из Cloudinary
+    const response = await cloudinary.api.resources({
+      type: "video",       // Тип ресурса (можно использовать "video" для фильтрации только видео)
+      resource_type: "video",  // Указываем, что нас интересуют только видео
+      max_results: 100,     // Максимальное количество видео, которое вы хотите получить (по умолчанию 20)
+    });
 
-      console.log('✅ Видео сохранено в базе:', { title, url });
-      res.json({ message: "Видео успешно добавлено!", title, url });
+    // Получаем ссылки и заголовки для каждого видео
+    const videos = response.resources.map((video) => {
+      return {
+        title: video.public_id,    // Название видео или его ID
+        url: video.url,            // Ссылка на видео
+      };
+    });
+
+    // Сохраняем видео в базе данных
+    for (let video of videos) {
+      await client.query(
+        "INSERT INTO videos (title, url) VALUES ($1, $2)", 
+        [video.title, video.url]
+      );
+    }
+
+    console.log('✅ Все видео добавлены в базу данных');
+    res.json({ message: "Видео успешно добавлены в базу данных", videos });
   } catch (err) {
-      console.error("❌ Ошибка сохранения в БД:", err);
-      res.status(500).json({ error: "Ошибка на сервере" });
+    console.error("❌ Ошибка при получении видео из Cloudinary:", err);
+    res.status(500).json({ error: "Ошибка при получении видео из Cloudinary" });
   }
 });
 
