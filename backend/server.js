@@ -61,7 +61,6 @@ async function uploadVideos() {
   try {
     // Запрашиваем все видео из Cloudinary
     const response = await cloudinary.api.resources({
-      type: "video",       // Тип ресурса (можно использовать "video" для фильтрации только видео)
       resource_type: "video",  // Указываем, что нас интересуют только видео
       max_results: 100,     // Максимальное количество видео, которое вы хотите получить
     });
