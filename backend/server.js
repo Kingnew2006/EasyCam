@@ -56,41 +56,53 @@ app.get('/news', async (req, res) => {
   }
 }); 
 
-// Создаем функцию для автоматической загрузки видео
-async function uploadVideos() {
+async function fetchAndStoreVideos() {
   try {
-    // Запрашиваем все видео из Cloudinary
     const response = await cloudinary.api.resources({
-      resource_type: "video",  // Указываем, что нас интересуют только видео
-      max_results: 100,     // Максимальное количество видео, которое вы хотите получить
+      resource_type: "video",  // Запрашиваем только видео
+      max_results: 100,         // Ограничиваем максимальное количество
     });
 
-    // Получаем ссылки и заголовки для каждого видео
+    if (!response.resources || response.resources.length === 0) {
+      console.log('Нет видео в Cloudinary!');
+      return;
+    }
+
+    // Получаем ссылки и названия для каждого видео
     const videos = response.resources.map((video) => {
       return {
-        title: video.public_id,    // Название видео или его ID
-        url: video.url,            // Ссылка на видео
+        title: video.public_id,  // Название видео
+        url: video.url,          // URL видео
+        public_id: video.public_id  // Добавляем public_id для проверки
       };
     });
 
-    // Сохраняем видео в базе данных
-    for (let video of videos) {
-      await client.query(
-        "INSERT INTO videos (title, url) VALUES ($1, $2)", 
-        [video.title, video.url]
+    // Проверяем каждое видео, чтобы не добавлять его несколько раз
+    for (const video of videos) {
+      // Проверяем, существует ли видео в базе данных
+      const res = await client.query(
+        "SELECT * FROM videos WHERE public_id = $1",
+        [video.public_id]
       );
+
+      if (res.rows.length > 0) {
+        console.log(`Видео ${video.title} уже существует в базе данных.`);
+      } else {
+        // Добавляем видео в базу данных, если оно не существует
+        await client.query(
+          "INSERT INTO videos (title, url, public_id) VALUES ($1, $2, $3)",
+          [video.title, video.url, video.public_id]
+        );
+        console.log(`Видео ${video.title} добавлено в базу данных.`);
+      }
     }
 
-    console.log('✅ Видео добавлены в базу данных автоматически!');
   } catch (err) {
-    console.error("❌ Ошибка при получении видео из Cloudinary:", err);
+    console.error("Ошибка при получении видео из Cloudinary или добавлении в базу данных:", err);
   }
 }
 
-// Вызовите эту функцию вручную, если хотите запустить процесс сразу
-uploadVideos();  // Этим вызовом мы запускаем загрузку видео в базу
-
-
+fetchAndStoreVideos();
 
 // **2. Получение списка видео**
 app.get("/videos", async (req, res) => {
