@@ -16,6 +16,7 @@ cloudinary.config({
   api_secret: "uLRItP_IbYH9q8fqqEqt8c_VDyY"
 });
 
+
 // Настройка хранилища для видео
 const storage = new CloudinaryStorage({
   cloudinary: cloudinary,
@@ -55,32 +56,28 @@ app.get('/news', async (req, res) => {
   }
 }); 
 
-app.post("/upload", upload.single("video"), async (req, res) => {
-  console.log("Файл, полученный от клиента:", req.file); // ✅ Проверяем файл
-  console.log("Данные запроса:", req.body); // ✅ Проверяем заголовок
+app.post("/upload", async (req, res) => {
+  const { title, url } = req.body; // Получаем заголовок и ссылку
 
-  
-  const { title } = req.body; // Получаем заголовок из запроса
-
-  if (!req.file || !title) {
-      return res.status(400).json({ error: "Ошибка: нужно видео и заголовок" });
+  if (!title || !url) {
+      return res.status(400).json({ error: "Ошибка: нужно указать заголовок и URL видео" });
   }
 
   try {
-      const videoUrl = req.file.path; // URL Cloudinary
-
-      // Сохраняем заголовок и URL в базу данных
+      // Добавляем запись в базу данных
       await client.query(
           "INSERT INTO videos (title, url) VALUES ($1, $2)", 
-          [title, videoUrl]
+          [title, url]
       );
-      console.log('video uploded')
-      res.json({ message: "Видео загружено!", title, videoUrl });
+
+      console.log('✅ Видео сохранено в базе:', { title, url });
+      res.json({ message: "Видео успешно добавлено!", title, url });
   } catch (err) {
-      console.error("Ошибка сохранения в БД:", err);
+      console.error("❌ Ошибка сохранения в БД:", err);
       res.status(500).json({ error: "Ошибка на сервере" });
   }
 });
+
 
 // **2. Получение списка видео**
 app.get("/videos", async (req, res) => {
