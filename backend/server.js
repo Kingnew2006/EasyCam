@@ -56,6 +56,10 @@ app.get('/news', async (req, res) => {
 }); 
 
 app.post("/upload", upload.single("video"), async (req, res) => {
+  console.log("Файл, полученный от клиента:", req.file); // ✅ Проверяем файл
+  console.log("Данные запроса:", req.body); // ✅ Проверяем заголовок
+
+  
   const { title } = req.body; // Получаем заголовок из запроса
 
   if (!req.file || !title) {
@@ -70,7 +74,7 @@ app.post("/upload", upload.single("video"), async (req, res) => {
           "INSERT INTO videos (title, url) VALUES ($1, $2)", 
           [title, videoUrl]
       );
-
+      console.log('video uploded')
       res.json({ message: "Видео загружено!", title, videoUrl });
   } catch (err) {
       console.error("Ошибка сохранения в БД:", err);
