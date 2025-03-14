@@ -3,12 +3,13 @@
 @use 'fonts' as *;
 @use 'spiner' as *;
 
-header {
+#header {
     margin: 0 auto;
     width: 1600px; 
     height: 748px;
     background-image: url(../img/main/Бэкграунд.jpg); 
-     
+    contain: paint;
+    
 } 
 .head {
     width: 1205px;
@@ -127,6 +128,20 @@ header {
         
       
     }
+
+    &__videopage__button {
+        @include button;
+        margin-left: 1540px;
+        position: fixed; 
+        transition: all 1s ease;
+        font-size: 18px;
+        width: 150px; 
+
+
+        &:hover {
+            margin-left: 1455px; 
+        }
+    } 
 
 
     &__verification {
@@ -873,3 +888,77 @@ header {
 .notinvalid {
     border: red 1px solid; 
 } 
+
+
+.videopage {
+
+    &__header {
+        margin: 0 auto; 
+        width: 1600px;
+        height: 130px;
+        display: flex; 
+        border-bottom: black 2px solid;
+
+
+        &__home__button {
+            @include button;
+            background-color: #5C17CD;
+            height: 60px;
+            width: 237px;
+            margin-top: 48px;
+        }
+
+        &__title {
+            background-color: #5C17CD;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            font-family: $fontmon; 
+            color: $primary-color;
+            line-height: 110%;
+            font-size: 24px;
+            width: 500px;
+            height: 60px;
+            margin: 48px 0 0 313px;
+        }
+    }
+
+    &__main {
+        margin: 0 auto;
+        height: 2000px;
+        overflow: auto;
+        width: 1600px; 
+        display: flex;
+        align-items: center;
+        flex-direction: column ;
+
+
+        &__video {
+            width: 1500px;
+            height: 378px;
+            display: flex;
+            margin-top: 41px;
+            border-top: black 1px solid; 
+
+
+            &__title {
+                margin-top: 10px;
+                height: 44px;
+                font-family: $fontmon;
+                line-height: 110%; 
+                width: 400px; 
+                font-size: 30px;
+
+            } 
+
+
+            &__player {
+                width: 640px;
+                height: 360px;
+                margin: 18px 0 0 350px; 
+                border-radius: 10px; 
+            }
+        }
+    }
+}

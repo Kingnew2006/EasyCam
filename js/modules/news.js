@@ -41,5 +41,4 @@ let newsload = async () => {
 
   }) 
 } 
-
 export { news , newsload  , newses }
