@@ -3,6 +3,7 @@ import * as login from './modules/login.js'
 import * as clones from './modules/clones.js' 
 import * as newss from './modules/news.js'
 import * as Validation from './modules/FormValidation.js' 
+ 
 
 // slidder
 sliddermain.slidder.nextpic() 
@@ -15,7 +16,6 @@ clones.page__ready.cloneing()
 newss.news().then(()=> {newss.newsload()})  
 // formValidation and input checks 
 Validation.FormValidation()
-
 
 
 

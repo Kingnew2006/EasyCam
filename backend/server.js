@@ -3,6 +3,9 @@ const { Client, Pool } = require('pg');
 const cloudinary = require("cloudinary").v2;
 const multer = require("multer");
 const { CloudinaryStorage } = require("multer-storage-cloudinary");
+const jwt = require("jsonwebtoken"); // Добавляем JWT
+const bcrypt = require("bcryptjs"); // Для хеширования паролей
+
 
 // Настроим подключение к базе данных Supabase
 const connectionString = 'postgresql://postgres.bhgxbdxdaglqecttbfsu:AzJ-qa7-QCg-NNq@aws-0-eu-central-1.pooler.supabase.com:6543/postgres';
@@ -128,6 +131,9 @@ app.get('/users', async (req, res) => {
   }
 });
 
+
+
+
 app.post('/form', async (req, res) => {
   try {
     const { user, password } = req.body;
@@ -136,13 +142,16 @@ app.post('/form', async (req, res) => {
     if (!user || !password) {
       return res.status(400).json({ error: 'Заполните все поля' });
     } 
+    const hashedPassword = await bcrypt.hash(userpass, 10);
+    const token = jwt.sign({ username }, SECRET_KEY);
+
 
     const result = await client.query(
-      'INSERT INTO users (username, password) VALUES ($1, $2) RETURNING *',
-      [username, userpass]
+      'INSERT INTO users (username, password ,token) VALUES ($1, $2, $3) RETURNING *',
+      [username, hashedPassword , token] 
     );
 
-    res.status(201).json({ message: 'Пользователь добавлен', user: result.rows[0] });
+    res.status(201).json({ message: 'Пользователь добавлен', user: result.rows[0] , usertoken: token});
   } catch (err) {
     console.error('Ошибка добавления пользователя:', err.stack);
     res.status(500).json({ error: 'Ошибка сервера' });
