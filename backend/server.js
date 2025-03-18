@@ -1,3 +1,12 @@
+const dotenv = require('dotenv');
+const result = dotenv.config({ path: __dirname + '/.env' });
+
+if (result.error) {
+  console.error("Ошибка загрузки .env файла:", result.error);
+} else {
+  console.log(".env файл успешно загружен.");
+}
+
 const express = require('express');
 const { Client, Pool } = require('pg');
 const cloudinary = require("cloudinary").v2;
@@ -5,10 +14,8 @@ const multer = require("multer");
 const { CloudinaryStorage } = require("multer-storage-cloudinary");
 const jwt = require("jsonwebtoken"); // Добавляем JWT
 const bcrypt = require("bcryptjs"); // Для хеширования паролей
-require('dotenv').config();
 
-
-
+ 
 const connectionString = process.env.DB_CONNECTION_STRING;
 const client = new Client({ connectionString });
 
