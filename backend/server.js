@@ -5,18 +5,18 @@ const multer = require("multer");
 const { CloudinaryStorage } = require("multer-storage-cloudinary");
 const jwt = require("jsonwebtoken"); // Добавляем JWT
 const bcrypt = require("bcryptjs"); // Для хеширования паролей
+require('dotenv').config();
 
 
-// Настроим подключение к базе данных Supabase
-const connectionString = 'postgresql://postgres.bhgxbdxdaglqecttbfsu:AzJ-qa7-QCg-NNq@aws-0-eu-central-1.pooler.supabase.com:6543/postgres';
-const client = new Client({ connectionString });
+
+const client = new Client({ connectionString: process.env.DB_CONNECTION_STRING });
 
 
-// Настройки Cloudinary
+
 cloudinary.config({
-  cloud_name: "dnrgvy2r3",
-  api_key: "815674323656927",
-  api_secret: "uLRItP_IbYH9q8fqqEqt8c_VDyY"
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET
 });
 
 
@@ -143,7 +143,7 @@ app.post('/form', async (req, res) => {
       return res.status(400).json({ error: 'Заполните все поля' });
     } 
     const hashedPassword = await bcrypt.hash(userpass, 10);
-    const token = jwt.sign({ username }, SECRET_KEY);
+    const token = jwt.sign({ username }, process.env.SECRET_KEY);
 
 
     const result = await client.query(
