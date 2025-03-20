@@ -469,12 +469,13 @@ a {
   box-shadow: 0px 5px 20px #386DF4;
 }
 .header__main__verification__input__invalid--area {
-  margin: 5px 0 0 33px;
+  margin: 0px 0 0 33px;
   color: red;
-  font-family: "Courier New", Courier, monospace;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   opacity: 0.7;
-  font-size: 14;
-  height: 10px;
+  font-size: 10;
+  line-height: normal;
+  position: relative;
 }
 .header__main__verification__input--forgot {
   color: #8A8A8F;

@@ -73,17 +73,26 @@ let inputnotvalid = (obj) => {
 
 inputs.passinput.addEventListener('input' , (e) => {
     
-    if (inputs.passinput.value.length < 8) {
+    if (inputs.passinput.value.length < 8|| inputs.passinput.value.length > 20) {
         inputnotvalid('pass')
-        inputs.invalid.textContent = 'Пароль должен иметь минимум 8 символов'
-    } else if (inputs.passinput.value.length >= 8) {
+        inputs.invalid.textContent = ' Пароль должен иметь минимум 8 символов максимум 20 символов '
+    } else if (inputs.passinput.value.length >= 8 ) {
         inputs.passinputmain.classList.remove('notinvalid') 
         inputs.invalid.textContent = ''
-    } else if (inputs.userinput.value.length > 20) {
-        inputnotvalid('user')
-        inputs.invalid.textContent = 'Имя пользователя должен иметь максимум 20 символов'
-    }
+    } 
 }) 
-} 
+
+inputs.userinput.addEventListener('input' , (e) => {
+    if (inputs.userinput.value.length > 20 || inputs.userinput.value.length < 5) {
+        inputnotvalid('user')
+        inputs.invalid.textContent = ' Имя пользователя должен иметь максимум 20 символов минимум 5 символов '
+    } else if (inputs.userinput.value.length <= 20 && inputs.userinput.value.length > 5) {
+        inputs.userinputmain.classList.remove('notinvalid') 
+        inputs.invalid.textContent = ''
+    }
+    })
+
+
+}
 
 export {FormValidation}
