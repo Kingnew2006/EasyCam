@@ -79,9 +79,9 @@ inputs.passinput.addEventListener('input' , (e) => {
     } else if (inputs.passinput.value.length >= 8) {
         inputs.passinputmain.classList.remove('notinvalid') 
         inputs.invalid.textContent = ''
-    } else if (inputs.passinput.value.length > 20) {
-        inputnotvalid('pass')
-        inputs.invalid.textContent = 'Пароль должен иметь максимум 20 символов'
+    } else if (inputs.userinput.value.length > 20) {
+        inputnotvalid('user')
+        inputs.invalid.textContent = 'Имя пользователя должен иметь максимум 20 символов'
     }
 }) 
 } 
