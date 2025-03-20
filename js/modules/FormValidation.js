@@ -75,10 +75,13 @@ inputs.passinput.addEventListener('input' , (e) => {
     
     if (inputs.passinput.value.length < 8) {
         inputnotvalid('pass')
-        inputs.invalid.textContent = 'Пароль минимум должен иметь 8 символов'
+        inputs.invalid.textContent = 'Пароль должен иметь минимум 8 символов'
     } else if (inputs.passinput.value.length >= 8) {
         inputs.passinputmain.classList.remove('notinvalid') 
         inputs.invalid.textContent = ''
+    } else if (inputs.passinput.value.length > 20) {
+        inputnotvalid('pass')
+        inputs.invalid.textContent = 'Пароль должен иметь максимум 20 символов'
     }
 }) 
 } 
